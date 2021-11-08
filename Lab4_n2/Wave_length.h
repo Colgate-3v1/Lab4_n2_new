@@ -12,7 +12,10 @@ public:
     Wave_length();
     Wave_length(double _v);
     Wave_length(const Wave_length& reference);
-
+    virtual string get_string()
+    {
+        return to_string(this->get()) + "m";
+    }
     Wave_length(const Wave_length&& reference) :Base(move(reference)) {   }
     Wave_length& operator=(const Wave_length& right)
     {

@@ -66,7 +66,10 @@ int main()
     Massa n(4);
     vector<shared_ptr<Base>> p;
     p.push_back(create_factory("45.4kg"));
-    p.push_back(create_factory("4.2J"));
+    p.push_back(create_factory("4.4K"));
+    p.push_back(create_factory("3.4J"));
+    p.push_back(create_factory("45.4Hz"));
+    p.push_back(create_factory("5.4m"));
     for (const auto& i : p)
-        cout << i->get() << endl;
+        cout << i->get_string() << endl;
 }

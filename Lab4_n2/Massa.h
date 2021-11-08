@@ -16,6 +16,10 @@ public:
     Massa(double _v);
     Massa(const Massa& reference);
     Massa(const Massa&& reference) :Base(move(reference)) {   }
+    virtual string get_string()
+    {
+        return to_string(this->get())+"kg";
+    }
     Massa& operator=(const Massa& right)
     {
         return dynamic_cast<Massa&>(Base::operator=(dynamic_cast<const Base&>(right)));
