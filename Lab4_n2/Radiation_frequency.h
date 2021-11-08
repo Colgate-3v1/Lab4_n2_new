@@ -13,6 +13,10 @@ public:
     Radiation_frequency(double _v);
     Radiation_frequency(const Radiation_frequency& reference);
     Radiation_frequency(const Radiation_frequency&& reference) :Base(move(reference)) {   }
+    virtual string get_string()
+    {
+        return to_string(this->get()) + "Hz";
+    }
     Radiation_frequency& operator=(const Radiation_frequency& right)
     {
         return dynamic_cast<Radiation_frequency&>(Base::operator=(dynamic_cast<const Base&>(right)));

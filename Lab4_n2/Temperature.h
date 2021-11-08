@@ -11,8 +11,11 @@ public:
     Temperature();
     Temperature(double _v);
     Temperature(const Temperature& reference);
-
     Temperature(const Temperature&& reference) :Base(move(reference)) {   }
+    virtual string get_string()
+    {
+        return to_string(this->get()) + "K";
+    }
     Temperature& operator=(const Temperature& right)
     {
         return dynamic_cast<Temperature&>(Base::operator=(dynamic_cast<const Base&>(right)));

@@ -47,6 +47,10 @@ public:
     {
         value = _value;
     }
+    virtual string get_string()
+    {
+        return to_string(value);
+    }
 };
 class Radiation_frequency;
 class Energy;

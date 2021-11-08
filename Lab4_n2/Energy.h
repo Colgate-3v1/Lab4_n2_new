@@ -15,7 +15,10 @@ public:
     Energy(const Energy& reference);
     Energy(Energy&& reference) :Base(move(reference)) {}
     Energy(double _v);
-
+    virtual string get_string()
+    {
+        return to_string(this->get()) + "J";
+    }
     Energy& operator=(const Energy& right)
     {
         return dynamic_cast<Energy&>(Base::operator=(dynamic_cast<const Base&>(right)));
