@@ -119,4 +119,5 @@ int main()
     vector<Massa> vector2 = new_vector(func_min, m);
     cout << "New massiv 1:" << endl;
     print(vector2);
+        cout << i->get_string() << endl;
 }
