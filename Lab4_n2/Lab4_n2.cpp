@@ -64,14 +64,14 @@ auto new_vector(function<Massa(const vector<Massa>&)> fun,const vector<Massa>& m
 
 int main()
 {
-    vector<shared_ptr<Base>> p;
+    /*vector<shared_ptr<Base>> p;
     p.push_back(create_factory("45.4kg"));
     p.push_back(create_factory("4.4K"));
     p.push_back(create_factory("3.4J"));
     p.push_back(create_factory("45.4Hz"));
     p.push_back(create_factory("5.4m"));
     for (const auto& i : p)
-        cout << i->get_string() << endl;
+        cout << i->get_string() << endl;*/
     vector<Massa> m(10);
     for (auto& i : m)
     {
@@ -115,9 +115,16 @@ int main()
             if (min > i) min = i;
         return min;
     };
-    cout << "Min element: " <<endl<<func_min(m) << endl;
+    cout << "Min element: " <<endl<< [](const vector<Massa>& v_m)
+    {
+        Massa min = v_m[0];
+        for (const auto& i : v_m)
+            if (min > i) min = i;
+        return min;
+    }(m) << endl;
     vector<Massa> vector2 = new_vector(func_min, m);
     cout << "New massiv 1:" << endl;
     print(vector2);
-        cout << i->get_string() << endl;
+
+    
 }
